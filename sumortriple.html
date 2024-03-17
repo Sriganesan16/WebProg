@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum or Triple</title>
+</head>
+<body>
+
+<p>Enter two integers:</p>
+
+<form id="sumForm">
+  <label for="firstNumber">First Number:</label>
+  <input type="number" id="firstNumber" name="firstNumber" required><br><br>
+  
+  <label for="secondNumber">Second Number:</label>
+  <input type="number" id="secondNumber" name="secondNumber" required><br><br>
+  
+  <input type="button" value="Calculate" onclick="calculateSumOrTriple()">
+</form>
+
+<p id="result"></p>
+
+<script>
+  // Function to compute sum or triple
+  function sumOrTriple(a, b) {
+    if (a === b) {
+      return 3 * (a + b);
+    } else {
+      return a + b;
+    }
+  }
+  function calculateSumOrTriple() {
+    var firstNumber = parseInt(document.getElementById("firstNumber").value);
+    var secondNumber = parseInt(document.getElementById("secondNumber").value);
+
+    var result = sumOrTriple(firstNumber, secondNumber);
+
+    document.getElementById("result").textContent = "Result: " + result;
+  }
+</script>
+
+</body>
+</html>
